@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+    - Base      : kobuki
+    - Stacks    : interbotix
+    - 3d Sensor : kinect2
+-->    
+<robot name="turtlebot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find turtlebot2i_description)/urdf/turtlebot_library.urdf.xacro" />
+  <xacro:include filename="$(find turtlebot2i_description)/urdf/sensors/kinect2.urdf.xacro"/>
+  
+  <kobuki/>
+  <stack_interbotix parent="base_link"/>
+  <sensor_sr300 parent="base_link"/>
+  <phantomx_pincher_arm parent="base_link" color="Red" gripper_color="Red">
+    <origin xyz="0.145 0.0 0.124"/>
+  </phantomx_pincher_arm>
+  <sensor_kinect2  parent="base_link"/>
+</robot>

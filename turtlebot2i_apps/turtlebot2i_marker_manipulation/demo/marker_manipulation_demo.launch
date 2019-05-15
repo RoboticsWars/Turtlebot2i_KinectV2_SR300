@@ -1,0 +1,23 @@
+<launch>
+  <include file="$(find turtlebot2i_bringup)/launch/turtlebot2i_basic.launch" />
+
+  <include file="$(find turtlebot2i_marker_manipulation)/launch/marker_manipulation.launch" />
+
+  <node name="marker_manipulation_demo" pkg="turtlebot2i_marker_manipulation" type="marker_manipulation_demo" output="screen" >
+    <param name="arm_link" value="/arm_base_link" />
+    <param name="gripper_open" value="0.031" />
+    
+    <param name="block_size" value="0.02" /> <!--TODO: Change to toolholder size-->
+    <!--param name="tool_size" value="0.0185"/-->
+    <!--param name="tool_height" value="0.118"/-->
+    <param name="gripper_tighten" value="0.006" />
+    <param name="table_height" value="0.0" /> <!--Relative to base_link-->
+    
+  </node>
+
+  <include file="$(find turtlebot2i_arm_director)/launch/named_pose_director.launch" >
+    <arg name="load_moveit" value="true"/>
+  </include>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot2i_marker_manipulation)/demo/marker_manipulation_demo.rviz" />
+</launch>
