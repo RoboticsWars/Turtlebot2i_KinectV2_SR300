@@ -25,7 +25,7 @@
   <remap from="camera/sd/image_color_rect" to="rgb/image_raw"/>
   <!--remap from="camera/sd/camera_info" to="depth_registered/camera_info"/-->
   <remap from="camera/sd/camera_info" to="rgb/camera_info"/>
-  <include file="$(find kinect2_bridge)/launch/kinect2.launch">
+  <include file="$(find turtlebot2i_bringup)/launch/includes/3dsensor/kinect2.launch">
     <arg name="base_name"                       value="$(arg base_name)"/> <!-- kinect2_bridge.launch -->
     <arg name="publish_tf"                      value="$(arg publish_tf)"/>
     <!--arg name="depth_registration"              value="$(arg depth_registration)"/-->
