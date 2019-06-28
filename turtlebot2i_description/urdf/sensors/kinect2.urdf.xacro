@@ -9,10 +9,9 @@
     <joint name="camera_mount_joint" type="fixed">
       <origin xyz="-0.119 0.125 0.306" rpy="${cam_or} ${cam_op} ${cam_oy}"/>
       <parent link="${parent}"/>
-      <child link="camera_link" />
+      <child link="kinect2_model_link" />
     </joint>
-
-    <link name="camera_link">
+    <link name="kinect2_model_link">
       <visual>
        <origin xyz="0 0 0" rpy="-0.11757 0 -1.5707963"/>
         <geometry>
@@ -38,52 +37,53 @@
     </link>
 
     <joint name="camera_rgb_joint" type="fixed">
-      <origin xyz="0.080 -0.2198 0.0317" rpy="${cam_or} ${cam_op} ${cam_oy}"/>
-      <parent link="camera_link"/>
+      <origin xyz="0.080 -0.2198 0.0317" rpy="0 0 0"/>
+      <parent link="kinect2_model_link"/>
       <child link="camera_rgb_frame" />
     </joint>
     <link name="camera_rgb_frame"/>
 
-    <joint name="kinect2_model_joint" type="fixed">
+    <joint name="camera_rgb_optical_joint" type="fixed">
       <origin xyz="0.0 0.0 0.0" rpy="-1.570796327 0.0 -1.570796327"/>
       <parent link="camera_rgb_frame"/>
       <child link="camera_rgb_optical_frame" />
     </joint>
     <link name="camera_rgb_optical_frame"/>
+
       
 
     <!-- The fixed joints & links below are usually published by static_transformers launched by the OpenNi launch 
          files. However, for Gazebo simulation we need them, so we add them here.
          (Hence, don't publish them additionally!) -->
-	<joint name="camera_depth_joint" type="fixed">
-	  <origin xyz="0 0.05 0" rpy="0 0 0" />
-	  <parent link="camera_rgb_frame" />
-	  <child link="camera_depth_frame" />
-	</joint>
-	<link name="camera_depth_frame"/>
+	  <joint name="camera_depth_joint" type="fixed">
+	    <origin xyz="0 0.05 0" rpy="0 0 0" />
+	    <parent link="camera_rgb_frame" />
+	    <child link="camera_depth_frame" />
+	  </joint>
+	  <link name="camera_depth_frame"/>
 
-	<joint name="camera_ir_joint" type="fixed">
-	  <origin xyz="0 0.05 0" rpy="0 0 0" />
-	  <parent link="camera_rgb_frame" />
-	  <child link="camera_ir_frame" />
-	</joint>
-	<link name="camera_ir_frame"/>
+	  <joint name="camera_depth_optical_joint" type="fixed">
+	    <origin xyz="0 0 0" rpy="${-M_PI/2} 0.0 ${-M_PI/2}" />
+	    <parent link="camera_depth_frame" />
+	    <child link="camera_depth_optical_frame" />
+	  </joint>
+	  <link name="camera_depth_optical_frame"/>
 
-	<joint name="camera_depth_optical_joint" type="fixed">
-	  <origin xyz="0 0 0" rpy="-1.570796327 0.0 -1.570796327" />
-	  <parent link="camera_depth_frame" />
-	  <child link="camera_depth_optical_frame" />
-	</joint>
-	<link name="camera_ir_optical_frame"/>
+	  <joint name="camera_ir_joint" type="fixed">
+	    <origin xyz="0 0.05 0" rpy="0 0 0" />
+	    <parent link="camera_rgb_frame" />
+	    <child link="camera_ir_frame" />
+	  </joint>
+    <link name="camera_ir_frame"/>
 
-	<joint name="camera_ir_optical_joint" type="fixed">
-	  <origin xyz="0 0 0" rpy="-1.570796327 0.0 -1.570796327" />
-	  <parent link="camera_ir_frame" />
-	  <child link="camera_ir_optical_frame" />
-	</joint>
-	<link name="camera_depth_optical_frame"/>
-	
-	<!-- Kinect sensor for simulation -->
-	<turtlebot_sim_3dsensor/>
+    <joint name="camera_ir_optical_joint" type="fixed">
+	    <origin xyz="0 0 0" rpy="-1.570796327 0.0 -1.570796327" />
+	    <parent link="camera_ir_frame" />
+	    <child link="camera_ir_optical_frame" />
+	  </joint>
+    <link name="camera_ir_optical_frame"/>
+
+	  <!-- Kinect sensor for simulation -->
+	  <turtlebot_sim_3dsensor/>
   </xacro:macro>
 </robot>
