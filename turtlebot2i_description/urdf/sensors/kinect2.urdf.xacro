@@ -15,7 +15,7 @@
       <visual>
        <origin xyz="0 0 0" rpy="-0.11757 0 -1.5707963"/>
         <geometry>
-         <mesh filename="package://turtlebot_description/meshes/sensors/kinect2.stl" scale="0.001 0.001 0.001"/>
+         <mesh filename="package://turtlebot2i_description/meshes/sensors/kinect2.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="black">
           <color rgba="0.1 0.1 0.1 1"/>
