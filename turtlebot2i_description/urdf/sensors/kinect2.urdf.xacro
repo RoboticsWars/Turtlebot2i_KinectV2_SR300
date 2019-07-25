@@ -7,7 +7,7 @@
   <!-- Parameterised in part by the values in turtlebot_properties.urdf.xacro -->
   <xacro:macro name="sensor_kinect2" params="parent">
     <joint name="camera_mount_joint" type="fixed">
-      <origin xyz="-0.119 0.125 0.306" rpy="${cam_or} ${cam_op} ${cam_oy}"/>
+      <origin xyz="-0.119 0.125 0.256" rpy="${cam_or} ${cam_op} ${cam_oy}"/>
       <parent link="${parent}"/>
       <child link="kinect2_model_link" />
     </joint>
