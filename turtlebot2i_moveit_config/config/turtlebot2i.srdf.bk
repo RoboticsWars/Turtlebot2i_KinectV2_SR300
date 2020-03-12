@@ -29,7 +29,7 @@
         <joint name="arm_bicep_joint" value="-0.7477" />
         <joint name="arm_forearm_joint" value="-0.8112" />
         <joint name="arm_shoulder_pan_joint" value="0" />
-        <joint name="arm_wrist_flex_joint" value="-1.2528" />
+        <joint name="arm_wrist_flex_joint" value="-1.253" />
         <joint name="gripper_link_joint" value="0" />
     </group_state>
     <group_state name="gripper_open" group="pincher_gripper">
@@ -47,10 +47,10 @@
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_base_link" link2="arm_shoulder_pan_link" reason="Adjacent" />
     <disable_collisions link1="arm_base_link" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="arm_base_link" link2="camera_link" reason="Never" />
     <disable_collisions link1="arm_base_link" link2="camera_sr300" reason="Never" />
     <disable_collisions link1="arm_base_link" link2="caster_back_link" reason="Never" />
     <disable_collisions link1="arm_base_link" link2="caster_front_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="kinect2_model_link" reason="Never" />
     <disable_collisions link1="arm_base_link" link2="plate_bottom_link" reason="Default" />
     <disable_collisions link1="arm_base_link" link2="plate_middle_link" reason="Never" />
     <disable_collisions link1="arm_base_link" link2="plate_top_link" reason="Never" />
@@ -86,10 +86,10 @@
     <disable_collisions link1="arm_base_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="arm_forearm_link" reason="Adjacent" />
     <disable_collisions link1="arm_bicep_link" link2="arm_shoulder_pan_link" reason="Adjacent" />
+    <disable_collisions link1="arm_bicep_link" link2="camera_link" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="camera_sr300" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="caster_back_link" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="caster_front_link" reason="Never" />
-    <disable_collisions link1="arm_bicep_link" link2="kinect2_model_link" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="plate_top_link" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="plate_utility_lower_link" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="plate_utility_upper_link" reason="Never" />
@@ -120,12 +120,12 @@
     <disable_collisions link1="arm_bicep_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="arm_bicep_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="arm_wrist_flex_link" reason="Adjacent" />
+    <disable_collisions link1="arm_forearm_link" link2="camera_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="camera_sr300" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="caster_back_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="caster_front_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="gripper_active2_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="gripper_active_link" reason="Never" />
-    <disable_collisions link1="arm_forearm_link" link2="kinect2_model_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="plate_top_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="plate_utility_upper_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="standoff_100mm_0_link" reason="Never" />
@@ -151,10 +151,10 @@
     <disable_collisions link1="arm_forearm_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="arm_shoulder_pan_link" link2="base_link" reason="Never" />
+    <disable_collisions link1="arm_shoulder_pan_link" link2="camera_link" reason="Never" />
     <disable_collisions link1="arm_shoulder_pan_link" link2="camera_sr300" reason="Never" />
     <disable_collisions link1="arm_shoulder_pan_link" link2="caster_back_link" reason="Never" />
     <disable_collisions link1="arm_shoulder_pan_link" link2="caster_front_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_pan_link" link2="kinect2_model_link" reason="Never" />
     <disable_collisions link1="arm_shoulder_pan_link" link2="plate_bottom_link" reason="Never" />
     <disable_collisions link1="arm_shoulder_pan_link" link2="plate_middle_link" reason="Never" />
     <disable_collisions link1="arm_shoulder_pan_link" link2="plate_top_link" reason="Never" />
@@ -196,7 +196,6 @@
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_100mm_11_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_100mm_12_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_100mm_13_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_flex_link" link2="standoff_100mm_2_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_10_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_11_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_1_link" reason="Never" />
@@ -205,13 +204,13 @@
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_5_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_6_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_7_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_8_link" reason="Never" />
+    <disable_collisions link1="arm_wrist_flex_link" link2="standoff_50mm_9_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="arm_wrist_flex_link" link2="wheel_right_link" reason="Never" />
+    <disable_collisions link1="base_link" link2="camera_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="camera_sr300" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="caster_back_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="caster_front_link" reason="Adjacent" />
-    <disable_collisions link1="base_link" link2="kinect2_model_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="plate_bottom_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="plate_middle_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="plate_top_link" reason="Adjacent" />
@@ -245,12 +244,47 @@
     <disable_collisions link1="base_link" link2="standoff_50mm_9_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="wheel_left_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="wheel_right_link" reason="Adjacent" />
+    <disable_collisions link1="camera_link" link2="camera_sr300" reason="Never" />
+    <disable_collisions link1="camera_link" link2="caster_back_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="caster_front_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="plate_bottom_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="plate_middle_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="plate_top_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="plate_utility_lower_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="plate_utility_upper_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_0_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_10_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_11_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_12_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_13_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_1_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_2_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_3_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_6_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_7_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_8_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_100mm_9_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_258mm_0_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_258mm_1_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_0_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_10_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_11_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_1_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_2_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_3_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_4_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_5_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_6_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_7_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_8_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="standoff_50mm_9_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="wheel_left_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="camera_sr300" link2="caster_back_link" reason="Never" />
     <disable_collisions link1="camera_sr300" link2="caster_front_link" reason="Never" />
-    <disable_collisions link1="camera_sr300" link2="kinect2_model_link" reason="Never" />
     <disable_collisions link1="camera_sr300" link2="plate_bottom_link" reason="Never" />
     <disable_collisions link1="camera_sr300" link2="plate_middle_link" reason="Never" />
-    <disable_collisions link1="camera_sr300" link2="plate_top_link" reason="Never" />
+    <disable_collisions link1="camera_sr300" link2="plate_top_link" reason="Default" />
     <disable_collisions link1="camera_sr300" link2="plate_utility_lower_link" reason="Never" />
     <disable_collisions link1="camera_sr300" link2="plate_utility_upper_link" reason="Never" />
     <disable_collisions link1="camera_sr300" link2="standoff_100mm_0_link" reason="Never" />
@@ -284,7 +318,6 @@
     <disable_collisions link1="caster_back_link" link2="caster_front_link" reason="Never" />
     <disable_collisions link1="caster_back_link" link2="gripper_active2_link" reason="Never" />
     <disable_collisions link1="caster_back_link" link2="gripper_active_link" reason="Never" />
-    <disable_collisions link1="caster_back_link" link2="kinect2_model_link" reason="Never" />
     <disable_collisions link1="caster_back_link" link2="plate_bottom_link" reason="Never" />
     <disable_collisions link1="caster_back_link" link2="plate_middle_link" reason="Never" />
     <disable_collisions link1="caster_back_link" link2="plate_top_link" reason="Never" />
@@ -318,7 +351,6 @@
     <disable_collisions link1="caster_back_link" link2="standoff_50mm_9_link" reason="Never" />
     <disable_collisions link1="caster_back_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="caster_back_link" link2="wheel_right_link" reason="Never" />
-    <disable_collisions link1="caster_front_link" link2="kinect2_model_link" reason="Never" />
     <disable_collisions link1="caster_front_link" link2="plate_bottom_link" reason="Never" />
     <disable_collisions link1="caster_front_link" link2="plate_middle_link" reason="Never" />
     <disable_collisions link1="caster_front_link" link2="plate_top_link" reason="Never" />
@@ -356,6 +388,7 @@
     <disable_collisions link1="gripper_active2_link" link2="standoff_100mm_12_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="standoff_100mm_13_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_10_link" reason="Never" />
+    <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_11_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_1_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_2_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_4_link" reason="Never" />
@@ -363,12 +396,13 @@
     <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_6_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_7_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_8_link" reason="Never" />
+    <disable_collisions link1="gripper_active2_link" link2="standoff_50mm_9_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="gripper_active2_link" link2="wheel_right_link" reason="Never" />
-    <disable_collisions link1="gripper_active_link" link2="standoff_100mm_11_link" reason="Never" />
     <disable_collisions link1="gripper_active_link" link2="standoff_100mm_12_link" reason="Never" />
     <disable_collisions link1="gripper_active_link" link2="standoff_100mm_13_link" reason="Never" />
-    <disable_collisions link1="gripper_active_link" link2="standoff_100mm_6_link" reason="Never" />
+    <disable_collisions link1="gripper_active_link" link2="standoff_100mm_3_link" reason="Never" />
+    <disable_collisions link1="gripper_active_link" link2="standoff_50mm_10_link" reason="Never" />
     <disable_collisions link1="gripper_active_link" link2="standoff_50mm_11_link" reason="Never" />
     <disable_collisions link1="gripper_active_link" link2="standoff_50mm_1_link" reason="Never" />
     <disable_collisions link1="gripper_active_link" link2="standoff_50mm_2_link" reason="Never" />
@@ -380,39 +414,6 @@
     <disable_collisions link1="gripper_active_link" link2="standoff_50mm_9_link" reason="Never" />
     <disable_collisions link1="gripper_active_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="gripper_active_link" link2="wheel_right_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="plate_bottom_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="plate_middle_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="plate_top_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="plate_utility_lower_link" reason="Default" />
-    <disable_collisions link1="kinect2_model_link" link2="plate_utility_upper_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_0_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_10_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_11_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_12_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_13_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_1_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_2_link" reason="Default" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_3_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_6_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_7_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_8_link" reason="Default" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_100mm_9_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_258mm_0_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_258mm_1_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_0_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_10_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_11_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_1_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_2_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_3_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_4_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_5_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_6_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_7_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_8_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="standoff_50mm_9_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="wheel_left_link" reason="Never" />
-    <disable_collisions link1="kinect2_model_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="plate_bottom_link" link2="plate_middle_link" reason="Never" />
     <disable_collisions link1="plate_bottom_link" link2="plate_top_link" reason="Never" />
     <disable_collisions link1="plate_bottom_link" link2="plate_utility_lower_link" reason="Never" />
