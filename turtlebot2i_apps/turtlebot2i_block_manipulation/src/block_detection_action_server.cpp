@@ -175,7 +175,7 @@ public:
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_transformed(new pcl::PointCloud<pcl::PointXYZRGB>);
 
     tf_listener_.waitForTransform(std::string(arm_link_), cloud.header.frame_id,
-                                  ros::Time(cloud.header.stamp), ros::Duration(1.0));
+                                  ros::Time(cloud.header.stamp/1000000), ros::Duration(1.0));
     if (!pcl_ros::transformPointCloud(std::string(arm_link_), cloud, *cloud_transformed, tf_listener_))
     {
       ROS_ERROR("Error converting to desired frame");
